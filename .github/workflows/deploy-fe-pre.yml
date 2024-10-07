@@ -40,8 +40,8 @@ jobs:
         uses: cloudflare/wrangler-action@v3
         with:
           workingDirectory: ./fe
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          apiToken: ${{ secrets.CF_API_TOKEN }}
+          accountId: ${{ secrets.CF_ACCOUNT_ID }}
           preCommands: wrangler pages project create org-fe --production-branch=main || true
           command: pages deploy ./build/client --project-name=org-fe --branch=${{ github.ref }} --commit-dirty=true
           packageManager: bun
