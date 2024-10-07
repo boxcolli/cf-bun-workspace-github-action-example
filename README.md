@@ -1,9 +1,9 @@
-# cf-bun-workspace-github-action-example
+# cf-workspace-example
 This example shows how to setup:
-- CF Workers, Pages
-- Bun Workspace
-- Monorepo and internal package (Prisma)
-- GitHub Action
+- CF [Workers](https://developers.cloudflare.com/workers), [Pages](https://developers.cloudflare.com/pages)
+- [Bun](https://bun.sh/) Workspace
+- Monorepo and internal package ([Prisma](https://www.prisma.io/))
+- [GitHub Action](https://docs.github.com/ko/actions)
 
 ## Limits:
 > You cannot configure secrets for Cloudflare Pages with GitHub Action.
@@ -15,9 +15,9 @@ In my case, I chose to configure it through the cloudflare dashboard to keep thi
 
 
 > You should watch [cloudflare/pages-action](https://github.com/cloudflare/pages-action) for further updates.
-- I'm using an unofficial [workaround by kitabisa](https://github.com/kitabisa/cloudflare-pages-action) that utilizes [cloudflare/wrangler-action](https://github.com/cloudflare/wrangler-action) because the official [cloudflare/pages-action](https://github.com/cloudflare/pages-action) doesn't support [bun](https://bun.sh/).
+- I'm using an unofficial [workaround by kitabisa](https://github.com/kitabisa/cloudflare-pages-action) that utilizes [cloudflare/wrangler-action](https://github.com/cloudflare/wrangler-action) because the official [cloudflare/pages-action](https://github.com/cloudflare/pages-action) doesn't support bun.
 
-## Deploy
+## Quick Test
 [![Deploy to Cloudflare Workers](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/boxcolli/cf-bun-workspace-github-action-example)
 
 ## Steps
