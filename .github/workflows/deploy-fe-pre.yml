@@ -1,0 +1,47 @@
+name: Deploy FE Preview
+
+on:
+  push:
+    branches:
+      - preview
+    paths:
+      - "fe/**"
+      - ".github/workflows/deploy-fe.yml"
+      
+  pull_request:
+    branches:
+      - preview
+    paths:
+      - "fe/**"
+      - ".github/workflows/deploy-fe.yml"
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    name: Deploy
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Install
+        working-directory: ./fe
+        run: bun install
+      
+      - name: Build
+        working-directory: ./fe
+        run: bun run build
+      
+      - name: Deploy
+        uses: cloudflare/wrangler-action@v3
+        with:
+          workingDirectory: ./fe
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          preCommands: wrangler pages project create org-fe --production-branch=main || true
+          command: pages deploy ./build/client --project-name=org-fe --branch=${{ github.ref }} --commit-dirty=true
+          packageManager: bun

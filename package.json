@@ -1,5 +1,11 @@
 {
-  "name": "workspace",
+  "name": "org-workspace",
+  "version": "0.0.1",
+  "workspaces": [
+    "@org/*",
+    "be",
+    "fe"
+  ],
   "module": "index.ts",
   "type": "module",
   "devDependencies": {

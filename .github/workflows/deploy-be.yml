@@ -1,0 +1,41 @@
+name: Deploy BE
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "be/**"
+      - ".github/workflows/deploy-be.yml"
+
+  pull_request:
+    branches:
+      - main
+    paths:
+      - "be/**"
+      - ".github/workflows/deploy-be.yml"
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    name: Deploy
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Deploy
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          workingDirectory: "./be"
+          command: deploy --minify
+          environment: production
+        #   secrets: |
+        #     DATABASE_URL
+        # env:
+        #   DATABASE_URL: ${{ secrets.DATABASE_URL }}
