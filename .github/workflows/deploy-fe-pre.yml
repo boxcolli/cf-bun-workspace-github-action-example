@@ -14,8 +14,7 @@ on:
     paths:
       - "fe/**"
       - ".github/workflows/deploy-fe.yml"
-  repository_dispatch:
-    
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
