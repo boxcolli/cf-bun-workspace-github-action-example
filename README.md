@@ -18,7 +18,7 @@ In my case, I chose to configure it through the cloudflare dashboard to keep thi
 - I'm using an unofficial [workaround by kitabisa](https://github.com/kitabisa/cloudflare-pages-action) that utilizes [cloudflare/wrangler-action](https://github.com/cloudflare/wrangler-action) because the official [cloudflare/pages-action](https://github.com/cloudflare/pages-action) doesn't support bun.
 
 ## Quick Test
-[![Deploy to Cloudflare Workers](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/boxcolli/cf-bun-workspace-github-action-example)
+[![Deploy to Cloudflare Workers](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/boxcolli/cf-workspace-example)
 
 ## Steps
 1. Publish an empty repository  
