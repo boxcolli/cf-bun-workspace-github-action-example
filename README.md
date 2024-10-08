@@ -24,9 +24,22 @@ In my case, I chose to configure it through the cloudflare dashboard to keep thi
 1. Publish an empty repository  
 2. Prepare `CLOUDFLARE_API_TOKEN` ([how to](https://developers.cloudflare.com/pages/how-to/use-direct-upload-with-continuous-integration/#add-cloudflare-credentials-to-github-secrets))
 3. Prepare `CF_ACCOUNT_ID` (its in your dashboard url)
-3. `gh repo clone boxcolli/cf-bun-workspace-github-action-example ./`
-4. Push into `main`
-5. Create `preview` branch
+3. `gh repo clone boxcolli/cf-workspace-example ./`
+4. Push into 'main'
+5. Uncomment workflow codes:
+```yml
+# .github/workflows/*.yml
+
+on:
+  # UNCOMMENT THIS PART #
+  # push:
+  #   branches:
+  #     - main
+  #   paths:
+  #     - "fe/**"
+  #     - ".github/workflows/deploy-fe.yml"
+```
+6. Create 'preview' branch
 
 ## Useful Commands
 ```

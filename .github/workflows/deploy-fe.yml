@@ -1,12 +1,13 @@
 name: Deploy FE
 
 on:
-  push:
-    branches:
-      - main
-    paths:
-      - "fe/**"
-      - ".github/workflows/deploy-fe.yml"
+  # UNCOMMENT THIS PART #
+  # push:
+  #   branches:
+  #     - main
+  #   paths:
+  #     - "fe/**"
+  #     - ".github/workflows/deploy-fe.yml"
 
   pull_request:
     branches:

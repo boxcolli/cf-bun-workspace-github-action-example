@@ -1,12 +1,13 @@
 name: Deploy BE
 
 on:
-  push:
-    branches:
-      - main
-    paths:
-      - "be/**"
-      - ".github/workflows/deploy-be.yml"
+  # UNCOMMENT THIS PART #
+  # push:
+  #   branches:
+  #     - main
+  #   paths:
+  #     - "be/**"
+  #     - ".github/workflows/deploy-be.yml"
 
   pull_request:
     branches:
