@@ -1,10 +1,8 @@
 {
   "name": "@org/prisma",
   "module": "index.ts",
+  "main": "index.ts",
   "type": "module",
-  "scripts": {
-    "gen": "bunx prisma generate"
-  },
   "devDependencies": {
     "@types/bun": "latest",
     "prisma": "5.20.0"
